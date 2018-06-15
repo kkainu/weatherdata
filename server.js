@@ -26,7 +26,6 @@ async function fetchAndStoreWeatherData() {
 }
 
 async function record(data) {
-  console.log('writing to database', data)
   return db.writePoints([
     {
       measurement: 'weather_data',
