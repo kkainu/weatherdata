@@ -13,7 +13,7 @@ setInterval(fetchAndStoreWeatherData, halfAnHour)
 
 async function fetchAndStoreWeatherData() {
   try {
-    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=60.28&lon=25.02&APPID=${APPID}`)
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=60.28&lon=25.02&APPID=${APPID}&units=metric`)
     if(!res.status) {
       throw new Error('Error while retrieving weather data: ' + res.statusText)
     }
