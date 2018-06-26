@@ -1,6 +1,5 @@
 const Influx = require('influx')
 const fetch = require('node-fetch')
-const halfAnHour = 1800000
 const APPID = process.env.APPID
 
 const db = new Influx.InfluxDB({
@@ -9,7 +8,7 @@ const db = new Influx.InfluxDB({
 });
 
 fetchAndStoreWeatherData()
-setInterval(fetchAndStoreWeatherData, halfAnHour)
+setInterval(fetchAndStoreWeatherData, 60000)
 
 async function fetchAndStoreWeatherData() {
   try {
